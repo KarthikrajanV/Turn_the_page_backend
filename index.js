@@ -12,7 +12,7 @@ app.use(cors())
 app.post('/generate-story', async (req, res) => {
     try {
       const { genre, title, synopsis } = req.body;
-      const prompt = `Give me a story with Title: ${title}\n and with Genre: ${genre}\n using this Synopsis: ${synopsis} dont give any heading just give the story paragraph`;
+      const prompt = `Give me a story with Title: ${title}\n and with Genre: ${genre}\n using this Synopsis: ${synopsis} dont give any heading just give the story paragraph and if the paragraph is long divide it into small paragraph for better readability`;
       const response = await run(prompt);
       res.json({ success: true, response });
     } catch (error) {
